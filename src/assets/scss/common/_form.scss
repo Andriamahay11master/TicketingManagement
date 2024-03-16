@@ -170,5 +170,10 @@ select{
             }
         }
     }
+    &.form-signup{
+        .form-logo{
+            margin-bottom: 40px;
+        }
+    }
 }
 
