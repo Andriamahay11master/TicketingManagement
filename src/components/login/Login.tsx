@@ -45,7 +45,7 @@ export default function Login({title, formdesc, email, password, labelButton, ro
                             <button className="btn btn-primary" onClick={connectAccount}>{labelButton}</button>
                         </div>
                     </form>
-                    <p>{textUser} <Link className="btn btn-link" href={routeSignup}>{labelSignup}</Link></p>
+                    <p className="text-signup">{textUser} <Link className="btn btn-link" href={routeSignup}>{labelSignup}</Link></p>
                 </div>
             </div>
         </div>

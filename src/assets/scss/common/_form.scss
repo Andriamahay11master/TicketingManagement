@@ -2,10 +2,15 @@
 input, select{
     border-radius: 10px;
     padding: 15px 20px;
-    border: 1px solid rgba($black, 0.4);
+    border: 1px solid rgba($grey, 0.5);
     width: 100%;
+    background: $white-fb;
     &:focus{
         outline: none;
+    }
+    &::placeholder{
+        font-size: 13px;
+        color: $grey;
     }
 }
 select{
@@ -37,13 +42,13 @@ select{
     height: 100vh;
 }
 .form-block{
-    margin: auto;
-    margin-top: 30px;
-    padding: 0 20px;
     background: $white;
-    width: 300px;
     border-radius: 10px;
     padding: 40px;
+    @include max(575px){
+        width: 90%;
+        padding: 20px;
+    }
     .form-logo{
         margin: auto;
         width: 40px;
@@ -55,8 +60,8 @@ select{
         background: $color-primary;
         margin-bottom: 55px;
         .logo{
-            width: 20px;
-            height: 25px;
+            width: 15px;
+            height: 17px;
             border-top-right-radius: 30px;
             border-bottom-right-radius: 30px;
             background: $white;
@@ -70,6 +75,9 @@ select{
         text-align: center;
         margin-bottom: 15px;
         font-size: 28px;
+        @include max(575px){
+            font-size: 25px;
+        }
     }
     .form-desc{
         text-align: center;
@@ -77,6 +85,9 @@ select{
         color:$grey;
         font-weight: 600;
         margin-bottom: 40px;
+        @include max(575px){
+            font-size: 15px;
+        }
     }
 
     .form-content{
@@ -138,9 +149,14 @@ select{
         .btn-primary{
             width: 100%;
         }
-        p{
+        .text-signup{
             font-size: 12px;
-            text-align: right;
+            text-align: center;
+            color: $grey;
+            font-weight: 600;
+            .btn-link{
+                font-weight: 600;
+            }
         }
     }
 }
