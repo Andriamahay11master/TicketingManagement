@@ -29,7 +29,7 @@ export default function Signup({title, formdesc, email, password, passwordagain,
         setShowPasswordConfirmation(!showPasswordConfirmation);
     };
 
-    const connectAccount = () => {
+    const createAccount = () => {
         window.location.href = routeClick
     }
     return (
@@ -61,7 +61,7 @@ export default function Signup({title, formdesc, email, password, passwordagain,
                             </div>
                         </div>  
                         <div className="form-group form-submit">
-                            <button className="btn btn-primary" onClick={connectAccount}>{labelButton}</button>
+                            <button type="submit" className="btn btn-primary" onSubmit={createAccount}>{labelButton}</button>
                         </div>
                     </form>
                     <p className="text-signup">{textUser} <Link className="btn btn-link" href={routeSignin}>{labelSignin}</Link></p>
