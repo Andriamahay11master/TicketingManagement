@@ -1,7 +1,7 @@
 //default css input/select
 input, select{
     border-radius: 10px;
-    padding: 15px 20px;
+    padding: 15px 30px 15px 20px;
     border: 1px solid rgba($grey, 0.5);
     width: 100%;
     background: $white-fb;
@@ -144,6 +144,17 @@ select{
             &:focus{
                 outline: none;
                 box-shadow: 0 0 0 0.1rem rgba($color-primary, 0.25);
+            }
+        }
+        .input-pass{
+            position: relative;
+            .icon{
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                color: $grey;
             }
         }
         .btn-primary{

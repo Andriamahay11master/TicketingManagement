@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useState } from "react";
 
 export interface LoginProps {
     title: string
@@ -16,6 +17,12 @@ export interface LoginProps {
 }
 
 export default function Login({title, formdesc, email, password, labelButton, routeSignup, textUser, labelSignup, textForgot, routeForgot, routeClick} : LoginProps) {
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     const connectAccount = () => {
         window.location.href = routeClick
@@ -39,7 +46,10 @@ export default function Login({title, formdesc, email, password, labelButton, ro
                                 <label htmlFor="password">{password}</label>
                                 <Link className="btn btn-link" href={routeForgot}>{textForgot}</Link>
                             </div>
-                            <input type="password" id="password" placeholder="Password"/>
+                            <div className="input-pass">
+                                <input type={showPassword ? "text" : "password"} id="password" placeholder="Password"/>
+                                <i className={`icon ${showPassword ? "icon-eye-off" : "icon-eye"}`} onClick={togglePasswordVisibility}></i>
+                            </div>
                         </div>
                         <div className="form-group form-submit">
                             <button className="btn btn-primary" onClick={connectAccount}>{labelButton}</button>
