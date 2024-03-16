@@ -14,7 +14,7 @@ export default function Home() {
     labelSignup: "Sign up",
     textForgot: "Forgot password?",
     routeForgot: "/forgot",
-    routeClick: "/home",
+    routeClick: "/dashboard",
   };
   
   return (

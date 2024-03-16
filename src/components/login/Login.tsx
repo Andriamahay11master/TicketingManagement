@@ -41,7 +41,8 @@ export default function Login({title, formdesc, email, password, labelButton, ro
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            await await (auth as any).signInWithEmailAndPassword(emailValue, passwordValue);
+            await (auth as any).signInWithEmailAndPassword(emailValue, passwordValue);
+            console.log("Login successful");
             // if ok redirect to dashboard
             router.push(routeClick);
 
