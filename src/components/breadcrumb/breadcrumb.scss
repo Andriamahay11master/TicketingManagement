@@ -3,6 +3,9 @@
 
 .breadcrumb {
     font-size: 12px;
+    @include max(575px){
+        margin-bottom: 5px;
+    }
     .breadcrumb-link {
         font-size: 12px;
         text-decoration: none;

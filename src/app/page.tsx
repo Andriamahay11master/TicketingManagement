@@ -65,7 +65,7 @@ const connectAccount = async () => {
                             </div>
                         </div>
                         <div className="form-group form-submit">
-                            <button className="btn btn-primary" onClick={connectAccount} disabled={!email || !password}>{dataLogin.labelButton}</button>
+                            <button className={(email && password) ? "btn btn-primary" : "btn"} onClick={connectAccount} disabled={!email || !password}>{dataLogin.labelButton}</button>
                         </div>
                     <p className="text-signup">{dataLogin.textUser} <Link className="btn btn-link" href={dataLogin.routeSignup}>{dataLogin.labelSignup}</Link></p>
                 </div>

@@ -1,12 +1,12 @@
 "use client"
 import Menu from "@/components/menu/Menu";
-import { signOut, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
 import { listNav, listParameter } from '@/app/data';
 import Breadcrumb from "@/components/breadcrumb/Breadcrumb";
 import Header from "@/components/header/Header";
 
-export default function Tickets() {
+export default function Settings() {
     const session = useSession({
         required: true,
         onUnauthenticated() {
@@ -17,8 +17,8 @@ export default function Tickets() {
     //data Breadcrumb
     const itemsBreadcrumb = [
         {
-            label: "Tickets",
-            path: '/tickets',
+            label: "Settings",
+            path: '/settings',
         }
     ];
 
@@ -42,7 +42,7 @@ export default function Tickets() {
                     </div>
                 </div>
                 <div className="appList">
-
+                    <p>Coming Soon - Content Component Settings</p>
                 </div>
             </div>
         </main>

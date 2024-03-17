@@ -4,6 +4,7 @@ import { signOut, useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
 import { listNav, listParameter } from '@/app/data';
 import Breadcrumb from '@/components/breadcrumb/Breadcrumb';
+import Header from '@/components/header/Header';
 
 export default function Dashboard() {
   const session = useSession({
@@ -21,13 +22,28 @@ export default function Dashboard() {
     }
   ];
 
+  const dataHeader = {
+    userinfo: (session?.data?.user?.email)?.toString() || '',
+    srcImg: "/images/user-default.avif",
+    titleImg: "Profile",
+    altImg: "Profile",
+  }
+
   return (
     <main className="appBlock">
       <Menu {...{listNav} } {...{listParameter}}/>
       <div className="appContent">
-        <Breadcrumb items={itemsBreadcrumb}/>
-        <div className='text-white'>{session?.data?.user?.email } {session?.data?.user?.name}</div>
-        <button className='text-white' onClick={() => signOut()}>Logout</button>
+        <div className="appTop">
+          <div className="appLeft">
+            <Breadcrumb items={itemsBreadcrumb}/>
+          </div>
+          <div className="appRight">
+            <Header {...dataHeader}/>
+          </div>
+        </div>
+        <div className="appList">
+
+        </div>
       </div>
     </main>
   )

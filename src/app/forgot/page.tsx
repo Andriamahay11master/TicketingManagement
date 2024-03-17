@@ -29,7 +29,7 @@ export default function ForgotPassword() {
                         <input type="email" id="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div className="form-group form-submit">
-                        <button className="btn btn-primary" onClick={resetEmail} disabled={!email}>Send</button>
+                        <button className={email ? "btn btn-primary" : "btn"} onClick={resetEmail} disabled={!email}>Send</button>
                     </div>
                   </div>
                   <Link className="btn btn-link btn-back" href="/">Back to sign in</Link>

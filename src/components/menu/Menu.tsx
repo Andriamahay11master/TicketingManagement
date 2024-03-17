@@ -33,9 +33,9 @@ export default function Menu({listNav, listParameter} : MenuProps) {
             })}
 
             {listParameter.map((item) => {
-                const isActive = pathname === item.pathMenu
+                const isActive2 = pathname === item.pathMenu
                 return (
-                    <li className="sidebar-menu-item sidebar-option" key={item.nameMenu}><Link className={isActive ? 'active' : ''} href={item.pathMenu}><i className={item.iconMenu}></i> <span>{item.nameMenu}</span></Link></li>
+                    <li className="sidebar-menu-item sidebar-option" key={item.nameMenu}><Link className={isActive2 ? 'active' : ''} href={item.pathMenu}><i className={item.iconMenu}></i> <span>{item.nameMenu}</span></Link></li>
                 )
             })}
         </ul>

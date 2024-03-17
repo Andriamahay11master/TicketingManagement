@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import './poppin.scss'
 interface PoppinProps {
     title: string
     message: string

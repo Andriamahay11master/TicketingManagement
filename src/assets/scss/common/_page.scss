@@ -3,5 +3,24 @@
     .appContent {
         margin-left: 250px;
         padding: 20px;
+        @include max(575px){
+            margin-left: 80px;
+            padding: 15px;
+        }
+    }   
+    .appTop{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include max(575px){
+            flex-direction: column;
+            align-items: start;
+            width: calc(100% - 15px);
+        }
+        .appRight{
+            @include max(575px){
+                width: 100%;
+            }
+        }
     }
 }
