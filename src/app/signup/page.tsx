@@ -44,7 +44,7 @@ const togglePasswordConfirmationVisibility = () => {
     <>
     <div className="form-bg">
              <div className="form-block form-signup">
-                <div className="form-logo">
+                <div className="logo-block">
                     <span className="logo"></span>
                 </div>
                 <h1 className="title-h1">{dataSignup.title}</h1>

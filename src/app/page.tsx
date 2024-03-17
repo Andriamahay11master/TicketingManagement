@@ -44,7 +44,7 @@ const connectAccount = async () => {
     <>
         <div className="form-bg">
              <div className="form-block">
-                <div className="form-logo">
+                <div className="logo-block">
                     <span className="logo"></span>
                 </div>
                 <h1 className="title-h1">{dataLogin.title}</h1>

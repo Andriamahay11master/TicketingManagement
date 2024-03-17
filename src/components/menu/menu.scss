@@ -1,0 +1,110 @@
+@import '../../assets/scss/common/variable.scss';
+@import '../../assets/scss/common/mixins.scss';
+
+$sidebar-bg-color: #252525;
+$sidebar-text-color: #fff;
+$sidebar-header-color: #fff;
+$sidebar-menu-item-color: #bbb;
+
+.sidebar {
+  background-color: $black2;
+  color: $sidebar-text-color;
+  width: 250px;
+  height: 100vh;
+  padding-top: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: width 0.5s ease-in-out;
+
+  @include max(575px) {
+    width: auto;
+  }
+  .sidebar-header {
+    text-align: center;
+    color: $sidebar-header-color;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    @include max(575px){
+        margin-bottom: 20px;
+    }
+    .logo-block{
+        margin-bottom: 0;
+        margin: unset;
+    }
+    .title-h1{
+        margin-left: 15px;
+        font-size: 20px;
+        color: $grey;
+        @include max(575px){
+            display: none;
+        }
+    }
+  }
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    a{
+        color: $grey;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 15px 25px;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        @include max(575px){
+            justify-content: center;
+            padding: 15px 30px;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: $white;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        i{
+            margin-right: 25px;
+            @include max(575px){
+                margin-right: 0;
+            }
+        }
+        &:hover{
+            color: $white;
+            background: rgba($black2, 0.5);
+            &::before{
+                opacity: 1;
+            }
+        }
+        &.active{
+            color: $white;
+            background: rgba($black2, 0.5);
+            &::before{
+                opacity: 1;
+            }
+        }
+        span{
+            @include max(575px){
+                display: none;
+            }
+        }
+    }
+    .sidebar-menu-item{
+        &.sidebar-option{
+            &:not(:last-child){    
+                border-top: 1px solid rgba($grey, 0.5);
+                margin-top: 15px;
+                padding-top: 15px;   
+            }
+        }
+    }
+  }
+}

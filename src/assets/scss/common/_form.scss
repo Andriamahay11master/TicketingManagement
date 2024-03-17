@@ -56,28 +56,6 @@ button{
         width: 90%;
         padding: 20px;
     }
-    .form-logo{
-        margin: auto;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 100%;
-        background: $color-primary;
-        margin-bottom: 55px;
-        .logo{
-            width: 15px;
-            height: 17px;
-            border-top-right-radius: 30px;
-            border-bottom-right-radius: 30px;
-            background: $white;
-            position: relative;
-            left: 2px;
-            box-shadow: inset 0px 11px 8px -10px rgba($black, 0.6),
-        }
-
-    }
     .title-h1{
         text-align: center;
         margin-bottom: 15px;
@@ -178,7 +156,7 @@ button{
         }
     }
     &.form-signup{
-        .form-logo{
+        .logo-block{
             margin-bottom: 40px;
         }
     }
