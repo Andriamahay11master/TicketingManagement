@@ -1,14 +1,8 @@
 @import '../../assets/scss/common/variable.scss';
 @import '../../assets/scss/common/mixins.scss';
 
-$sidebar-bg-color: #252525;
-$sidebar-text-color: #fff;
-$sidebar-header-color: #fff;
-$sidebar-menu-item-color: #bbb;
-
 .sidebar {
   background-color: $black2;
-  color: $sidebar-text-color;
   width: 250px;
   height: 100vh;
   padding-top: 30px;
@@ -18,13 +12,11 @@ $sidebar-menu-item-color: #bbb;
   overflow-y: auto;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   transition: width 0.5s ease-in-out;
-
   @include max(575px) {
     width: auto;
   }
   .sidebar-header {
     text-align: center;
-    color: $sidebar-header-color;
     display: flex;
     align-items: center;
     padding: 0 20px;

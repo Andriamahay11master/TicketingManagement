@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MenuType } from '@/models/MenuType';
+import { usePathname } from 'next/navigation'
 import './menu.scss';
 import Link from 'next/link';
 
@@ -9,11 +10,7 @@ interface MenuProps {
 }
 export default function Menu({listNav, listParameter} : MenuProps) {
 
-    const [activeLink, setActiveLink] = useState(listNav.length > 0 ? listNav[0].nameMenu : '');
-
-    const handleItemClick = (nameMenu: string) => {
-        setActiveLink(nameMenu);
-    };
+    const pathname = usePathname();
 
     return (
     <div className="sidebar">
@@ -26,12 +23,21 @@ export default function Menu({listNav, listParameter} : MenuProps) {
             </h1>
         </div>
         <ul className="sidebar-menu">
-            {listNav.map((item) => (
-                <li key={item.nameMenu}><Link className={activeLink === item.nameMenu ? 'active' : ''} href={item.pathMenu} onClick={() => handleItemClick(item.nameMenu)}><i className={item.iconMenu}></i> <span>{item.nameMenu}</span></Link></li>
-            ))}
-            {listParameter.map((item) => (
-                <li key={item.nameMenu} className='sidebar-menu-item sidebar-option'><Link className={activeLink === item.nameMenu ? 'active' : ''} href={item.pathMenu} onClick={() => handleItemClick(item.nameMenu)}><i className={item.iconMenu}></i> <span>{item.nameMenu}</span></Link></li>
-            ))}
+            {listNav.map((item) => {
+                const isActive = pathname === item.pathMenu
+
+                return (
+                    <li key={item.nameMenu}><Link className={isActive ? 'active' : ''} href={item.pathMenu}><i className={item.iconMenu}></i> <span>{item.nameMenu}</span></Link></li>
+                )
+                
+            })}
+
+            {listParameter.map((item) => {
+                const isActive = pathname === item.pathMenu
+                return (
+                    <li className="sidebar-menu-item sidebar-option" key={item.nameMenu}><Link className={isActive ? 'active' : ''} href={item.pathMenu}><i className={item.iconMenu}></i> <span>{item.nameMenu}</span></Link></li>
+                )
+            })}
         </ul>
     </div>
     );
