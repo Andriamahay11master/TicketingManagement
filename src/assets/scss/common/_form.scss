@@ -32,6 +32,13 @@ select{
         box-shadow: 0 0 4px 1px $color-secondary;
     }
 }
+button{
+    &:disabled {
+        background-color: $grey;
+        color: #fff;
+        cursor: not-allowed;
+      }
+}
 
 .form-bg{
     display: flex;
