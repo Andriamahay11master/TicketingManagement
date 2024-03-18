@@ -1,10 +1,11 @@
 "use client"
 import Menu from "@/components/menu/Menu";
-import { signOut, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
-import { listNav, listParameter } from '@/app/data';
+import { listNav, listParameter, tickets } from '@/app/data';
 import Breadcrumb from "@/components/breadcrumb/Breadcrumb";
 import Header from "@/components/header/Header";
+import ListTickets from "@/components/listTickets/ListTickets";
 
 export default function Tickets() {
     const session = useSession({
@@ -29,6 +30,8 @@ export default function Tickets() {
         altImg: "Profile",
       }
 
+      
+
     return (
         <main className="appBlock">
             <Menu {...{listNav} } {...{listParameter}}/>
@@ -42,7 +45,7 @@ export default function Tickets() {
                     </div>
                 </div>
                 <div className="appList">
-
+                    <ListTickets tickets={tickets}/>
                 </div>
             </div>
         </main>
