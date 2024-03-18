@@ -1,0 +1,50 @@
+.listTicket-block{
+    background: $white;
+    border-radius: 5px;
+    border: 1px solid rgba($grey, 0.5);
+    margin-top: 40px;
+    .listTicket-top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        @include max(575px){
+            flex-direction: column;
+        }
+        .title-h2{
+            font-size: 20px;
+            color: $black2;      
+            @include max(575px){
+                font-size: 18px;
+            }
+        }
+        .listTop-col{
+            &:last-child{
+                display: flex;
+                align-items: center;        
+                @include max(575px){
+                    margin-top: 15px;
+                    flex-direction: column;
+                    align-items: start;
+                }
+            }
+            label{
+                margin-right: 10px;
+                font-size: 13px;
+                font-weight: 600;
+                color: $grey-4A;
+            }
+            .list-select{
+                display: flex;
+                align-items: center;
+                &:not(:last-child){
+                    margin-right: 20px;
+                }
+                select{
+                    font-size: 12px;
+                    max-width: 150px;
+                }
+            }
+        }
+    }
+}

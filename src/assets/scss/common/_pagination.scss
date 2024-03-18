@@ -1,16 +1,43 @@
 .pagination-table{
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 10px 0;
-    button{
+    justify-content: flex-end;
+    padding: 10px 20px;
+    .pagination-indicator{
+        font-size: 12px;
+        margin-right: 20px;
+        color: $grey;
+    }
+    .btn{
         display: inline-flex;
-        padding: 5px 10px;
+        padding: 5px;
         border-radius: 2px;
+        width: auto;
+        font-size: 12px;
+        color: $grey;
+        &:not(:last-child){
+            margin-right: 10px;
+        }
         &.active{
             font-weight: 700;
             color: #FFF;
             background: $color-primary;
+        }
+    }
+    .pagination-select{
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        label{
+            margin-right: 5px;
+            font-weight: 600;
+            font-size: 12px;
+            color: $grey;
+        }
+        select{
+            font-size: 12px;
+            max-width: 50px;
+            color: $grey-4A;
         }
     }
 }
